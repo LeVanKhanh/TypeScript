@@ -10,3 +10,6 @@ webpack init
 
 npm init => to create package.json
 tsc --init => to create tsconfig.json
+
+-- Dependency Injection Container
+npm install inversify reflect-metadata --save

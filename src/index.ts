@@ -1,8 +1,10 @@
-import { ShapeCalculator } from "./shape-calculator";
+import { IShapeCalculator } from "./shape-calculator";
 import { Rectangle } from "./rectangle";
 import { IShape } from "./shape";
 import { Square } from "./square";
 import { Quadrilateral } from "./quadrilateral";
+import container from "./inversify.config";
+import Types from "./app-dependency-types";
 
 function calculateRectanglePerimeter(): void {
     const shape: IShape = new Rectangle(20, 20);
@@ -20,7 +22,8 @@ function calculateQuadrilateralPerimeter(): void {
 }
 
 function calculatePerimeter(sharp: IShape):void {
-    const calculator: ShapeCalculator = new ShapeCalculator();
+    // dependency Injection - resolve object IShapeCalculator
+    const calculator: IShapeCalculator = container.get<IShapeCalculator>(Types.shapeCalculator);
     calculator.calculatePerimeter(sharp);
 }
 
