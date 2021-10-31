@@ -2,23 +2,14 @@ import { IShape } from "./shape";
 
 export class Quadrilateral implements IShape {
     // there is an Quadrilateral ABCD
-    sideAB: number;
-    sideBC: number;
-    sideCD: number;
-    sideDA: number;
-    angle_a: number;
-    angle_b: number;
-    angle_c: number;
-    angle_d: number;
-
-    constructor(sideAB: number,
-        sideBC: number,
-        sideCD: number,
-        sideDA: number,
-        angle_a: number,
-        angle_b: number,
-        angle_c: number,
-        angle_d: number) {
+    constructor(public sideAB: number,
+        public sideBC: number,
+        public sideCD: number,
+        public sideDA: number,
+        public angle_a: number,
+        public angle_b: number,
+        public angle_c: number,
+        public angle_d: number) {
         this.sideAB = sideAB;
         this.sideBC = sideBC;
         this.sideCD = sideCD;
@@ -29,15 +20,15 @@ export class Quadrilateral implements IShape {
         this.angle_d = angle_d;
     }
 
-    volume(): number {
+    public volume(): number {
         return 0;
     }
 
-    area(): number {
+    public area(): number {
         return 0.5*(this.sideDA*this.sideAB*Math.sin(this.angle_a) + this.sideBC*this.sideCD*Math.sin(this.angle_c));
     }
 
-    perimeter(): number {
+    public perimeter(): number {
         const perimeter: number = this.sideAB + this.sideBC + this.sideCD + this.sideDA;
         console.log(`Quadrilateral perimeter: ${perimeter}`);
         return perimeter;
