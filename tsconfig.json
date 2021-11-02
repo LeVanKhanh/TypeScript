@@ -9,6 +9,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
+    "sourceMap": true // for debugging
   },
   "files": [
     "src/index.ts"
